@@ -66,7 +66,7 @@ def Graph_KNN_Funktion_Expo(Daten):
         print("Leider ist der Fehler > 2 :(")
     
 
-Graph_KNN_Funktion_Expo(Daten)
+#Graph_KNN_Funktion_Expo(Daten)
 
 
     
