@@ -21,6 +21,12 @@ def Act(x):
     
 def KNN_Funktion(x, Daten):
     [Anzahl_verborgene_Neuronen, Bias, Aktivierungsfunktion, Input_Gewichte, Bias_Gewichte, Output_Gewichte] = Daten
+    if Anzahl_verborgene_Neuronen != len(Input_Gewichte):
+        raise ValueError("Anzahl der verborgenen Neuronen und Input-Gewichte stimmen nicht überein.")
+    if Anzahl_verborgene_Neuronen != len(Output_Gewichte):
+        raise ValueError("Anzahl der verborgenen Neuronen und Output-Gewichte stimmen nicht überein.")
+    if (Anzahl_verborgene_Neuronen != len(Bias_Gewichte)) & (Bias == "Ja"):
+        raise ValueError("Anzahl der verborgenen Neuronen und Bias-Gewichte stimmen nicht überein.")
     Zustand = []
     for j in range(Anzahl_verborgene_Neuronen):
         Zustand.append(Output_Gewichte[j] * Act(Input_Gewichte[j] * x + Bias_Gewichte[j]))
