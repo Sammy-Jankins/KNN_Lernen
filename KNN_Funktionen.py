@@ -2,14 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Ein Input-Neuron
-Anzahl_verborgene_Neuronen = 4
-Bias = "Ja" # mögliche Werte: "Ja", "Nein"
-Aktivierungsfunktion = "ReLU" # mögliche Werte: "ReLU", "Linear"
-Input_Gewichte = [1,1,2,8]#[-1,2]#[1,1,2,8]
-Bias_Gewichte = [0,1,-2,-16]#[0,-2]#[0,1,-2,-16]
-Output_Gewichte = [1,1,1,1]
+#Anzahl_verborgene_Neuronen = 4
+#Bias = "Ja" # mögliche Werte: "Ja", "Nein"
+#Aktivierungsfunktion = "ReLU" # mögliche Werte: "ReLU", "Linear"
+#Input_Gewichte = [1,1,2,8]#[-1,2]#[1,1,2,8]
+#Bias_Gewichte = [0,1,-2,-16]#[0,-2]#[0,1,-2,-16]
+#Output_Gewichte = [1,1,1,1]
 
-Daten = [Anzahl_verborgene_Neuronen, Bias, Aktivierungsfunktion, Input_Gewichte, Bias_Gewichte, Output_Gewichte]
+#Daten = [Anzahl_verborgene_Neuronen, Bias, Aktivierungsfunktion, Input_Gewichte, Bias_Gewichte, Output_Gewichte]
 
 def Act(x):
     if Aktivierungsfunktion == "ReLU":
