@@ -86,3 +86,47 @@ def KNN2_Netz1(Kosten):
             loss = tf.reduce_sum([square_residuals[0], square_residuals[14]])
 
     return x, y, y_output, loss
+
+def KNN2_Netz2(Anzahl_verborgene_Neuronen, Aktivierungsfunktion):    
+    x = tf.placeholder(tf.float32, shape=(None, 1), name='x')
+    y = tf.placeholder(tf.float32, shape=(None, 1), name='y')
+    b1 = tf.Variable(tf.random.normal(shape = [Anzahl_verborgene_Neuronen]), name='b1')
+    
+   # bses = []
+    #for j in range(Anzahl_verborgene_Neuronen):
+       # bses.append(tf.Variable(tf.random.normal(shape = [1]), name='b'+str(j)))
+    #b2 = tf.Variable(tf.random.normal(shape = [1]), name='b2')
+    #ases = []
+    #yses = []
+    #for j in range(Anzahl_verborgene_Neuronen):
+        #with tf.variable_scope('Verborgene_Schicht_Nr' + str(j)) as scope:
+            #ases.append(tf.Variable(tf.random.normal(shape = [1,1]), name='a' + str(j)))
+            #yses.append(tf.nn.relu(x * ases[j] + bses[j]))
+    
+    with tf.variable_scope('Verborgene_Schicht') as scope:
+        a1 = tf.Variable(tf.random.normal(shape = [1,Anzahl_verborgene_Neuronen]), name='a1')
+        if Aktivierungsfunktion == "ReLU":
+            y1 = tf.nn.relu(tf.matmul(x, a1) + b1)
+        elif Aktivierungsfunktion == "Sigmoid":
+            y1 = tf.nn.sigmoid(tf.matmul(x, a1) + b1)
+        else:
+            y1 = tf.matmul(x, a1) + b1
+        
+        
+    #ases2 = []
+    #for j in range(Anzahl_verborgene_Neuronen):
+        #ases2.append(tf.Variable(tf.random.normal(shape = [1,1]), name='a2_'+str(j)))
+
+    
+    with tf.variable_scope('Output') as scope:
+        a2 = tf.Variable(tf.random.normal(shape = [Anzahl_verborgene_Neuronen,1]), name='a2') 
+        y_pred = tf.matmul(y1, a2) 
+    #y_pred = yses[0]*ases2[0]
+    #for j in range(1,Anzahl_verborgene_Neuronen):
+        #y_pred = y_pred + yses[j]*ases2[j]
+    loss = tf.reduce_sum(tf.square(y_pred - y))
+        #square_residuals = tf.square(y_pred - y)
+        #loss = square_residuals[0]+square_residuals[14]
+
+
+    return x, y, y_pred, loss
