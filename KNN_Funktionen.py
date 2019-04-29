@@ -63,10 +63,9 @@ def Graph_KNN_Funktion_Expo(Daten):
         maxi = max(maxi, np.abs(y_Werte[j]-y_Expo[j]))
     print("Der Approximationsfehler beträgt: " + str("{:.4f}".format(maxi)))
     if maxi < 2:
-        print("Der Fehler ist < 2, Glückwunsch!")
+        print("Der Fehler ist kleiner als 2, Glückwunsch!")
     else:
-        print("Leider ist der Fehler > 2 :(")
-    
+        print("Leider ist der Fehler größer als 2 :(")
 
 #Graph_KNN_Funktion_Expo(Daten)
 
