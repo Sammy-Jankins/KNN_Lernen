@@ -16,6 +16,8 @@ def Act(x):
         return x * (x > 0)
     elif Aktivierungsfunktion == "Linear":
         return x
+    elif Aktivierungsfunktion == "Sigmoid":
+        return 1/(1+np.exp(-x))
     else:
         raise ValueError("Aktivierungsfunktion falsch definiert.")
     
