@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import tensorflow as tf
 
 #Ein Input-Neuron
 #Anzahl_verborgene_Neuronen = 4
@@ -68,6 +69,20 @@ def Graph_KNN_Funktion_Expo(Daten):
         print("Leider ist der Fehler größer als 2 :(")
 
 #Graph_KNN_Funktion_Expo(Daten)
+        
+def KNN2_Netz1(Kosten):
+    x = tf.placeholder(tf.float32, shape=(None, 1), name='x') # Input-Variable x
+    y = tf.placeholder(tf.float32, shape=(None, 1), name='y') # Output-Variable y
+    a = tf.Variable(tf.random.normal(shape = [1,1]), name='a')
+    b = tf.Variable(np.random.normal(), name='b')
+    with tf.variable_scope('Output') as scope:
+        y_output = tf.add(tf.matmul(x, a), b)
+        if Kosten == "Variante 1":
+            loss = tf.reduce_sum(tf.square(y_output - y))
+        elif Kosten == "Variante 2": 
+            loss = tf.reduce_sum(y_output - y)
+        else:
+            square_residuals = tf.square(y_output - y)
+            loss = tf.reduce_sum([square_residuals[0], square_residuals[14]])
 
-
-    
+    return x, y, y_output, loss
