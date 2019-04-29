@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 #Daten = [Anzahl_verborgene_Neuronen, Bias, Aktivierungsfunktion, Input_Gewichte, Bias_Gewichte, Output_Gewichte]
 
-def Act(x):
+def Act(x, Aktivierungsfunktion):
     if Aktivierungsfunktion == "ReLU":
         return x * (x > 0)
     elif Aktivierungsfunktion == "Linear":
@@ -31,7 +31,7 @@ def KNN_Funktion(x, Daten):
         raise ValueError("Anzahl der verborgenen Neuronen und Bias-Gewichte stimmen nicht überein.")
     Zustand = []
     for j in range(Anzahl_verborgene_Neuronen):
-        Zustand.append(Output_Gewichte[j] * Act(Input_Gewichte[j] * x + Bias_Gewichte[j]))
+        Zustand.append(Output_Gewichte[j] * Act(Input_Gewichte[j] * x + Bias_Gewichte[j], Aktivierungsfunktion))
     return np.sum(Zustand)
 
 def Graph_KNN_Funktion(Daten, links, rechts):
