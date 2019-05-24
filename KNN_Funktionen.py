@@ -282,15 +282,15 @@ def KNN3_Lernen_2(x_Werte_Exp, y_Werte_Exp, Lernrate, Anzahl_Iterationen, Anzahl
             session.run(train_op, feed_dict)
             if Anzahl_Iterationen > 100:
                 if (i+1)%1000 == 0:
-                    b_KNN = session.run(y_out, {x : [[0]]})
-                    a_KNN = session.run(y_out, {x : [[1]]}) - b_KNN
+                   # b_KNN = session.run(y_out, {x : [[0]]})
+                  #  a_KNN = session.run(y_out, {x : [[1]]}) - b_KNN
                     print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
-                    print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
+                  #  print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
             else:
-                b_KNN = session.run(y_out, {x : [[0]]})
-                a_KNN = session.run(y_out, {x : [[1]]}) - b_KNN
+              #  b_KNN = session.run(y_out, {x : [[0]]})
+              #  a_KNN = session.run(y_out, {x : [[1]]}) - b_KNN
                 print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
-                print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
+              #  print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
             
         y_Vorhersage_x_Werte = session.run(y_out, {x : x_batch})
         b_KNN = session.run(y_out, {x : [[0]]})
