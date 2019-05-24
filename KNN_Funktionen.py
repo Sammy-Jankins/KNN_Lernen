@@ -198,3 +198,57 @@ def plot_train_data_color(x_0, p):
     plt.xlim(-3.,3.)
     plt.ylim(-3.,3.)
     plt.show()
+
+
+def KNN3_Lernern(x_Werte, y_Werte, Lernrate, Kostenfunktion):
+
+    x0_batch = x_Werte
+    y0_batch = y_Werte
+    x_batch = []
+    for j in range(len(x0_batch)):
+        x_batch.append([x0_batch[j]])
+    y_batch = []
+    for j in range(len(y0_batch)):
+        y_batch.append([y0_batch[j]])
+    pptimizer = tf.train.GradientDescentOptimizer(Lernrate)
+    #optimizer = tf.train.AdamOptimizer(1e-4)
+    #tf.train.MomentumOptimizer(learning_rate = 0.001, momentum = 0.9)
+    train_op = optimizer.minimize(Kostenfunktion)
+
+    with tf.Session() as session:
+        session.run(tf.global_variables_initializer())
+        feed_dict = {x: x_batch, y: y_batch}
+        for i in range(Anzahl_Iterationen):
+            session.run(train_op, feed_dict)
+            if Anzahl_Iterationen > 10000:
+                if (i+1)%1000 == 0:
+                    b_KNN = session.run(y_output, {x : [[0]]})
+                    a_KNN = session.run(y_output, {x : [[1]]}) - b_KNN
+                    print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                    print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
+            elif Anzahl_Iterationen > 1000:
+                if (i+1)%100 == 0:
+                    b_KNN = session.run(y_output, {x : [[0]]})
+                    a_KNN = session.run(y_output, {x : [[1]]}) - b_KNN
+                    print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                    print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]) + "\n")
+                
+            else:
+                b_KNN = session.run(y_output, {x : [[0]]})
+                a_KNN = session.run(y_output, {x : [[1]]}) - b_KNN
+                print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
+            
+        y_Vorhersage_x_Werte = session.run(y_output, {x : x_batch})
+        y_Vorhersage_x_15 = session.run(y_output, {x : [[15]]})
+        y_Vorhersage_x_40 = session.run(y_output, {x : [[40]]})
+        b_KNN = session.run(y_output, {x : [[0]]})
+        a_KNN = session.run(y_output, {x : [[1]]}) - b_KNN
+        #variables = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
+        #print(variables[len(variables)-2]) 
+        #print(variables[len(variables)-1]) 
+        #values = [session.run(v) for v in variables]
+        #print(values[len(values)-2])
+        #print(values[len(values)-1])
+        return y_Vorhersage_x_Werte, a_KNN, b_KNN
+    
