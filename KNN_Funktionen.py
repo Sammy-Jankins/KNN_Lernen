@@ -130,3 +130,66 @@ def KNN2_Netz2(Anzahl_verborgene_Neuronen, Aktivierungsfunktion):
 
 
     return x, y, y_pred, loss
+
+
+def get_x2(nb, c):
+    assert (c==-1 or c==1)
+    r = np.random.rand(nb)
+    phi = np.random.rand(nb) * 2 * np.pi
+    return np.concatenate(((r * np.sin(phi)).reshape(-1,1)+c, (r * np.cos(phi)).reshape(-1,1)), axis=1)
+
+def Daten_1_KNN3(nb_1, nb_2):
+    x_0 = get_x2(nb_1, -1)
+    x_1 = get_x2(nb_2, 1)
+    X = np.concatenate((x_0, x_1), axis=0)
+    t = np.zeros(len(X))
+    t[len(x_0):] = 1
+    p = np.random.permutation(range(len(X)))
+    # permute the data
+    X = X[p]
+    t = t[p]
+    return X, t
+
+def get_x(nb, c):
+    assert (c==0 or c==1)
+    r = c + np.random.rand(nb)
+    phi = np.random.rand(nb) * 2 * np.pi
+    return np.concatenate(((r * np.sin(phi)).reshape(-1,1), (r * np.cos(phi)).reshape(-1,1)), axis=1)
+
+def Daten_2_KNN3(nb_1, nb_2):
+    x_0 = get_x(nb_1, 0)
+    x_1 = get_x(nb_2, 1)
+    X = np.concatenate((x_0, x_1), axis=0)
+    t = np.zeros(len(X))
+    t[len(x_0):] = 1
+    p = np.random.permutation(range(len(X)))
+    # permute the data
+    X = X[p]
+    t = t[p]
+    return X, t
+
+def plot_train_data(x_0, x_1):
+    plt.figure(figsize=(7,7))
+    plt.scatter(x_0[:,0], x_0[:,1], label='Class 0', color='b') 
+    plt.scatter(x_1[:,0], x_1[:,1], label='Class 1', color='r') 
+    plt.xlabel("$x_1$")
+    plt.ylabel("$x_2$")
+    plt.xlim(-3.,3.)
+    plt.ylim(-3.,3.)
+    plt.show()
+    
+def Punkte_blau_rot(x_train, y_train):
+    plot_train_data(x_train[y_train==0], x_train[y_train==1])
+
+    
+def plot_train_data_color(x_0, p):
+    plt.figure(figsize=(7,7))
+    for j in range(len(x_0)):
+        #pj = np.min(1,np.max(p[j][0],0))
+        pj = max(0,min(p[j][0],1))
+        plt.scatter(x_0[j,0], x_0[j,1], color= (pj*pj, 0, 1-pj*pj))
+    plt.xlabel("$x_1$")
+    plt.ylabel("$x_2$")
+    plt.xlim(-3.,3.)
+    plt.ylim(-3.,3.)
+    plt.show()
