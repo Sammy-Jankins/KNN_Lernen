@@ -200,7 +200,7 @@ def plot_train_data_color(x_0, p):
     plt.show()
 
 
-def KNN3_Lernern(x_Werte, y_Werte, Lernrate, Kosten):
+def KNN3_Lernern(x_Werte, y_Werte, Kosten, Lernrate, Anzahl_Iterationen):
 
     tf.reset_default_graph() 
     x, y, y_output, Kostenfunktion = KNN2_Netz1(Kosten)
