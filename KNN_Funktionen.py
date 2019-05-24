@@ -179,7 +179,12 @@ def plot_train_data(x_0, x_1):
     plt.show()
     
 def Punkte_blau_rot(x_train, y_train):
-    plot_train_data(x_train[y_train==0], x_train[y_train==1])
+    
+    trues = y_train >=0.5 
+    trues = trues.reshape(1,-1)
+    trues = trues[0,:]
+    
+    plot_train_data(x_train[trues==0], x_train[trues==1])
 
     
 def plot_train_data_color(x_0, p):
