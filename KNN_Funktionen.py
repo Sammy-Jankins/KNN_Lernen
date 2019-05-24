@@ -210,7 +210,7 @@ def KNN3_Lernern(x_Werte, y_Werte, Lernrate, Kostenfunktion):
     y_batch = []
     for j in range(len(y0_batch)):
         y_batch.append([y0_batch[j]])
-    pptimizer = tf.train.GradientDescentOptimizer(Lernrate)
+    optimizer = tf.train.GradientDescentOptimizer(Lernrate)
     #optimizer = tf.train.AdamOptimizer(1e-4)
     #tf.train.MomentumOptimizer(learning_rate = 0.001, momentum = 0.9)
     train_op = optimizer.minimize(Kostenfunktion)
