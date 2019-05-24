@@ -259,7 +259,7 @@ def KNN3_Lernen_1(x_Werte, y_Werte, Kosten, Lernrate, Anzahl_Iterationen):
 def KNN3_Lernen_2(x_Werte, y_Werte, Kosten, Lernrate, Anzahl_Iterationen):
 
     tf.reset_default_graph()
-    x, y, y_out, Kostenfunktion = knn.KNN2_Netz2(Anzahl_verborgene_Neuronen, Aktivierungsfunktion)
+    x, y, y_out, Kostenfunktion = KNN2_Netz2(Anzahl_verborgene_Neuronen, Aktivierungsfunktion)
 
     x0_batch = x_Werte_Exp
     y0_batch = y_Werte_Exp
