@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
+#Code for project days at university of wuerzburg
+
 #Ein Input-Neuron
 #Anzahl_verborgene_Neuronen = 4
 #Bias = "Ja" # mögliche Werte: "Ja", "Nein"
@@ -302,4 +304,4 @@ def KNN3_Lernen_2(x_Werte_Exp, y_Werte_Exp, Lernrate, Anzahl_Iterationen, Anzahl
         #print(values[len(values)-2])
         #print(values[len(values)-1])
         return y_Vorhersage_x_Werte   
-    
+    #the end
