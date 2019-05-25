@@ -304,4 +304,4 @@ def KNN3_Lernen_2(x_Werte_Exp, y_Werte_Exp, Lernrate, Anzahl_Iterationen, Anzahl
         #print(values[len(values)-2])
         #print(values[len(values)-1])
         return y_Vorhersage_x_Werte   
-    
+    #the end
