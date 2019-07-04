@@ -80,9 +80,9 @@ def KNN2_Netz1(Kosten):
     with tf.variable_scope('Output') as scope:
         y_output = tf.add(tf.matmul(x, a), b)
         if Kosten == "Variante 2":
-            loss = tf.reduce_sum(tf.square(y_output - y))
+            loss = tf.reduce_mean(tf.square(y_output - y))
         elif Kosten == "Variante 1": 
-            loss = tf.reduce_sum(y_output - y)
+            loss = tf.reduce_mean(y_output - y)
         else:
             square_residuals = tf.square(y_output - y)
             loss = tf.reduce_sum([square_residuals[0], square_residuals[14]])
