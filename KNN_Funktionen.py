@@ -229,19 +229,19 @@ def KNN3_Lernen_1(x_Werte, y_Werte, Kosten, Lernrate, Anzahl_Iterationen):
                 if (i+1)%1000 == 0:
                     b_KNN = session.run(y_output, {x : [[0]]})
                     a_KNN = session.run(y_output, {x : [[1]]}) - b_KNN
-                    print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                    print("Fehler bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
                     print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
             elif Anzahl_Iterationen > 1000:
                 if (i+1)%100 == 0:
                     b_KNN = session.run(y_output, {x : [[0]]})
                     a_KNN = session.run(y_output, {x : [[1]]}) - b_KNN
-                    print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                    print("Fehler bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
                     print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]) + "\n")
                 
             else:
                 b_KNN = session.run(y_output, {x : [[0]]})
                 a_KNN = session.run(y_output, {x : [[1]]}) - b_KNN
-                print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                print("Fehler bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
                 print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
             
         y_Vorhersage_x_Werte = session.run(y_output, {x : x_batch})
@@ -286,12 +286,12 @@ def KNN3_Lernen_2(x_Werte_Exp, y_Werte_Exp, Lernrate, Anzahl_Iterationen, Anzahl
                 if (i+1)%1000 == 0:
                    # b_KNN = session.run(y_out, {x : [[0]]})
                   #  a_KNN = session.run(y_out, {x : [[1]]}) - b_KNN
-                    print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                    print("Fehler bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
                   #  print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
             else:
               #  b_KNN = session.run(y_out, {x : [[0]]})
               #  a_KNN = session.run(y_out, {x : [[1]]}) - b_KNN
-                print("Kosten bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
+                print("Fehler bei Iteration " + str(i+1) + ": "  + str(Kostenfunktion.eval(feed_dict)))
               #  print("Wert für a: " + str(a_KNN[0][0]) + " und für b: " + str(b_KNN[0][0]))
             
         y_Vorhersage_x_Werte = session.run(y_out, {x : x_batch})
