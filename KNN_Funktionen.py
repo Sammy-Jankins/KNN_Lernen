@@ -126,7 +126,7 @@ def KNN2_Netz2(Anzahl_verborgene_Neuronen, Aktivierungsfunktion):
     #y_pred = yses[0]*ases2[0]
     #for j in range(1,Anzahl_verborgene_Neuronen):
         #y_pred = y_pred + yses[j]*ases2[j]
-    loss = tf.reduce_sum(tf.square(y_pred - y))
+    loss = tf.reduce_mean(tf.square(y_pred - y))
         #square_residuals = tf.square(y_pred - y)
         #loss = square_residuals[0]+square_residuals[14]
 
