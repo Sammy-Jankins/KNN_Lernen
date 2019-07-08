@@ -13,5 +13,9 @@ Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befin
 
 -----
 
+<b>Bilder:</b>
+
+Neu generierte Bilder von Ziffern (KNN5):
+
 <img src = "./Bilder/fake_digits.png" width=200>
 <img src = "./Bilder/pong_nn_small-1.gif" width=200>
