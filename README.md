@@ -20,4 +20,5 @@ Neu generierte Bilder von Ziffern (KNN5):
 <img src = "./Bilder/fake_digits.png" width=200>
 
 Ein KNN spielt Pong (rechts, KNN7):
+
 <img src = "./Bilder/pong_nn_small-1.gif" width=200>
