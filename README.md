@@ -9,6 +9,9 @@ Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befin
 - KNN4.ipynb: Bilderkennung (Ziffern auf 28 x 28-Pixel-Bildern, MNIST-Datensatz).
 - KNN5.ipynb: GAN zum MNIST-Datensatz.
 - KNN6.ipynb: Autoencoder
+- KNN7.ipynb: Reinforcement learning: Ein KNN lernt, Pong zu spielen.
+
+-----
 
 <img src = "./Bilder/fake_digits.png" width=200>
 <img src = "./Bilder/pong_nn_small-1.gif" width=200>
