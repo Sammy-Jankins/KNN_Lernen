@@ -10,5 +10,7 @@ Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befin
 - KNN5.ipynb: GAN zum MNIST-Datensatz.
 - KNN6.ipynb: Autoencoder
 
+<img src = "fake_digits.png">
+
 ![Alt|200x397, 20%](./Bilder/fake_digits.png?raw=true)
 ![Alt text](./Bilder/pong_nn_small-1.gif?raw=true "Title")
