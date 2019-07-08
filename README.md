@@ -17,7 +17,7 @@ Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befin
 
 KNN4: Auf diesem Bild erkennt das KNN die Ziffer 3 (mit Wahrscheinlichkeit 57%).
 
-<img src = "./Bilder/louewe.png" width=800>
+<img src = "./Bilder/loewe.png" width=800>
 
 Neu generierte Bilder von Ziffern (KNN5):
 
