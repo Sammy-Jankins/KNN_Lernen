@@ -1,7 +1,14 @@
 # KNN_Lernen
 
 Dieses Projekt gibt eine kurze Einführung in das Thema "künstliche neuronale Netze" (Vorkenntnisse: Schulwissen).
-Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befinden sich die zugehörigen Python-Notebooks, die man z.B. in google Drive mit 'Colaboratory' öffnen kann. Notebooks: 
+Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befinden sich die zugehörigen Python-Notebooks, die man z.B. in google Drive mit 'Colaboratory' öffnen kann.
+
+Programm-Versionen:
+
+- Python (3.6.8)
+- Keras (2.2.4), Tensorflow (1.14.0)
+
+Notebooks: 
 
 - KNN1.ipynb: siehe Abschnitt 3.2 im Skript.
 - KNN2.ipynb: siehe Abschnitt 4.3 im Skript.
