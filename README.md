@@ -4,9 +4,11 @@ Dieses Projekt gibt eine kurze Einführung in das Thema "künstliche neuronale N
 Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befinden sich die zugehörigen Python-Notebooks, die man z.B. in google Drive mit 'Colaboratory' öffnen kann.
 
 Programm-Versionen:
-
+```
 - Python (3.6.8)
 - Tensorflow (1.14.0), Keras (2.2.4)
+```
+
 
 Notebooks: 
 
