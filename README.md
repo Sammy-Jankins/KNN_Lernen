@@ -25,5 +25,6 @@ Neu generierte Bilder von Ziffern (KNN5):
 
 Ein KNN spielt Pong (KNN7), links vor dem Training, rechts danach:
 
-<img src = "./Bilder/pong_nn_small-1.gif" width=200> <img src = "./Bilder/pong_nn_small-2.gif" width=200>
+<img src = "./Bilder/pong_nn_small-1.gif" width=200>   
+<img src = "./Bilder/pong_nn_small-2.gif" width=200>
 
