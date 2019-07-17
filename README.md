@@ -6,7 +6,7 @@ Ein Kurzskript zum Thema befindet sich in "KNN.pdf". Im Ordner "Notebooks" befin
 Programm-Versionen:
 
 - Python (3.6.8)
-- Keras (2.2.4), Tensorflow (1.14.0)
+- Tensorflow (1.14.0), Keras (2.2.4)
 
 Notebooks: 
 
