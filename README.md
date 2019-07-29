@@ -18,7 +18,7 @@ Notebooks:
 - KNN4.ipynb: Bilderkennung: Es werden KNN trainiert, die handgeschriebene Ziffern (28 x 28-Pixel) erkennen können (MNIST-Datensatz).
 - KNN5.ipynb: GAN zum MNIST-Datensatz.
 - KNN6.ipynb: Autoencoder
-- KNN7.ipynb: Reinforcement learning: Ein KNN lernt, Pong zu spielen.
+- KNN7.ipynb: Reinforcement learning: Ein KNN lernt, Pong zu spielen. (Low-Level-API-Implementierung: KNN7_low_level_API.ipynb)
 
 -----
 
